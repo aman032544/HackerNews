@@ -1,0 +1,31 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 17
+VisualStudioVersion = 17.8.34511.84
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "HackerNews.API", "HackerNews.API\HackerNews.API.csproj", "{592B26A2-8A01-416D-8842-DE6DD9F43FF5}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "HackerNews.API.Test", "HackerNews.API.Test\HackerNews.API.Test.csproj", "{A290CB22-808D-402A-92CA-FC98F6DF7306}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{592B26A2-8A01-416D-8842-DE6DD9F43FF5}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{592B26A2-8A01-416D-8842-DE6DD9F43FF5}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{592B26A2-8A01-416D-8842-DE6DD9F43FF5}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{592B26A2-8A01-416D-8842-DE6DD9F43FF5}.Release|Any CPU.Build.0 = Release|Any CPU
+		{A290CB22-808D-402A-92CA-FC98F6DF7306}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{A290CB22-808D-402A-92CA-FC98F6DF7306}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{A290CB22-808D-402A-92CA-FC98F6DF7306}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{A290CB22-808D-402A-92CA-FC98F6DF7306}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {FD3D3419-7509-431C-AC79-DE712AEF9012}
+	EndGlobalSection
+EndGlobal

@@ -1,0 +1,30 @@
+.search-container {
+    margin-bottom: 1rem;
+  }
+  
+  .search-input {
+    padding: 0.5rem;
+    width: 100%;
+    max-width: 400px;
+    font-size: 1rem;
+  }
+  
+  .story-list {
+    list-style: none;
+    padding: 0;
+  }
+  
+  .story-item {
+    margin: 0.5rem 0;
+  }
+  
+  .nav-btn {
+    padding: 0.4rem 0.8rem;
+    margin: 0 0.5rem;
+    font-weight: bold;
+  }
+  
+  .page-indicator {
+    font-weight: 500;
+  }
+  

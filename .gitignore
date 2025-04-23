@@ -1,0 +1,110 @@
+# ========== Node/Angular ==========
+
+# compiled output
+/dist
+/tmp
+/out-tsc
+/build
+/.angular
+
+# dependencies
+/node_modules
+
+# IDEs and editors
+/.idea
+.project
+.classpath
+.c9/
+*.launch
+.settings/
+*.sublime-workspace
+*.sublime-project
+.vscode/
+
+# Angular environment files
+/src/environments/environment*.ts
+
+# system files
+.DS_Store
+Thumbs.db
+
+# test coverage
+/coverage
+
+# log files
+*.log
+
+# ========== .NET / C# ==========
+
+# Build results
+[Dd]ebug/
+[Rr]elease/
+x64/
+x86/
+[Aa][Rr][Mm]/
+build/
+bld/
+[Bb]in/
+[Oo]bj/
+
+# User-specific files
+*.user
+*.userosscache
+*.suo
+*.sdf
+*.cache
+*.dbmdl
+*.log
+
+# Visual Studio files
+.vscode/
+.vs/
+.vscode-test/
+
+# ASP.NET Scaffolding
+ScaffoldingReadMe.txt
+
+# Resharper
+_ReSharper*/
+*.DotSettings.user
+
+# Rider
+.idea/
+
+# NCrunch
+*.ncrunch*
+.*crunch*.local.xml
+
+# Azure
+*.Publish.xml
+
+# Entity Framework
+Migrations/
+
+# NuGet
+*.nupkg
+*.snupkg
+.nuget/
+packages/
+*.nuspec
+
+# Backup and temporary files
+*~
+*.bak
+*.tmp
+*.swp
+
+# Reports
+TestResult*/
+*.trx
+*.coverage
+*.coveragexml
+
+# Logs
+logs/
+*.log
+
+# Others
+.env
+*.tsbuildinfo
+

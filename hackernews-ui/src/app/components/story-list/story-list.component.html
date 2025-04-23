@@ -1,0 +1,42 @@
+<div class="search-container">
+    <input
+      type="search"
+      class="search-input"
+      [value]="searchInput()"
+      (input)="onSearchChanged($event)"
+      placeholder="Search by title..."
+      aria-label="Search stories"
+    />
+  </div>
+  
+  <ul class="story-list">
+    <li *ngFor="let story of currentStories()" class="story-item">
+      <a [href]="story.url" target="_blank" rel="noopener noreferrer">
+        {{ story.title }}
+      </a>
+    </li>
+  </ul>
+  
+  <div class="pagination-controls">
+    <button
+      type="button"
+      class="nav-btn"
+      (click)="goToPrevious()"
+      [disabled]="activePage() === 1"
+    >
+      ◀ Previous
+    </button>
+  
+    <span class="page-indicator">
+      Page {{ activePage() }} of {{ maxPages() }}
+    </span>
+  
+    <button
+      type="button"
+      class="nav-btn"
+      (click)="goToNext()"
+      [disabled]="activePage() === maxPages()"
+    >
+      Next ▶
+    </button>
+  </div>
