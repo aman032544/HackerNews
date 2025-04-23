@@ -15,13 +15,16 @@ export class StoryListComponent implements OnInit {
   searchInput = signal('');
   activePage = signal(1);
   readonly itemsPerPage = 20;
+  isLoading: boolean = false;
 
   constructor(private storyService: StoryService) {}
 
   ngOnInit(): void {
+    this.isLoading = true;
     this.storyService.getStories().subscribe((stories) => {
       this.allStories.set(stories);
     });
+    this.isLoading = false;
   }
 
   // Filter stories based on the current search input
