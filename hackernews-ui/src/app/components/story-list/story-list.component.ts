@@ -11,20 +11,26 @@ import { CommonModule } from '@angular/common';
   styleUrls: ['./story-list.component.css']
 })
 export class StoryListComponent implements OnInit {
-  private allStories = signal<Story[]>([]);
+  public allStories = signal<Story[]>([]);
   searchInput = signal('');
   activePage = signal(1);
   readonly itemsPerPage = 20;
-  isLoading: boolean = false;
+  loading:boolean=false;
 
   constructor(private storyService: StoryService) {}
 
   ngOnInit(): void {
-    this.isLoading = true;
-    this.storyService.getStories().subscribe((stories) => {
-      this.allStories.set(stories);
-    });
-    this.isLoading = false;
+
+
+      this.loading=true;
+      this.storyService.getStories().subscribe((stories) => {
+        this.allStories.set(stories);
+      },(error)=>{
+        console.log(error);
+        this.loading=false;
+      });
+      this.loading=false;
+    
   }
 
   // Filter stories based on the current search input

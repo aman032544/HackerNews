@@ -1,13 +1,18 @@
-﻿using HackerNews.API.ApiOptions;
-using HackerNews.API.Models;
-using HackerNews.API.Repository;
+﻿using HackerNews.Models.Dto;
+using HackerNews.Models.Options;
+using HackerNews.Repository.Interfaces;
+using HackerNews.Services.Interfaces;
 using Microsoft.Extensions.Caching.Memory;
 using Microsoft.Extensions.Options;
+using System;
+using System.Collections.Generic;
 using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
 
-namespace HackerNews.API.Services
+namespace HackerNews.Services.Implementations
 {
-    public class HackerNewsService:IHackerNewsService
+    public class HackerNewsService : IHackerNewsService
     {
         #region Dependency Injection
 
@@ -37,7 +42,7 @@ namespace HackerNews.API.Services
             var results = await Task.WhenAll(tasks);
 
             var filtered = results
-                .Where(story => story is not null && !string.IsNullOrEmpty(story.Url))
+                .Where(story => story is not null && !string.IsNullOrEmpty(story.Url) && story.Type.ToLower().Equals("story"))
                 .ToList()!;
 
             _cache.Set(_hackerNewsOptions.CacheKey, filtered, TimeSpan.FromMinutes(10));
@@ -48,5 +53,4 @@ namespace HackerNews.API.Services
 
 
     }
-
 }

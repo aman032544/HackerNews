@@ -1,3 +1,5 @@
+<div class="Main">
+  <h1> HackerNews Stories</h1>
 <div class="search-container">
     <input
       type="search"
@@ -8,43 +10,44 @@
       aria-label="Search stories"
     />
   </div>
-  <div *ngIf="isLoading" class="loader-container">
+  <div *ngIf="loading" class="text-center py-4">
+    <div class="loader"></div>
     <p>Loading stories...</p>
-    <!-- You can replace this with a spinner icon if desired -->
   </div>
-  <div *ngIf="!isLoading && currentStories().length">
-    <ul class="story-list">
-      <li *ngFor="let story of currentStories()" class="story-item">
-        <a [href]="story.url" target="_blank" rel="noopener noreferrer">
-          {{ story.title }}
-        </a>
-      </li>
-    </ul>
-
-    <div class="pagination-controls">
-      <button
-        type="button"
-        class="nav-btn"
-        (click)="goToPrevious()"
-        [disabled]="activePage() === 1"
-      >
-        ◀ Previous
-      </button>
-    
-      <span class="page-indicator">
-        Page {{ activePage() }} of {{ maxPages() }}
-      </span>
-    
-      <button
-        type="button"
-        class="nav-btn"
-        (click)="goToNext()"
-        [disabled]="activePage() === maxPages()"
-      >
-        Next ▶
-      </button>
-    </div>
+  <ul  *ngIf="!loading " class="story-list link-container">
+    <li *ngFor="let story of currentStories()" class="story-item">
+      <a [href]="story.url" target="_blank" rel="noopener noreferrer">
+        {{ story.title }}
+      </a>
+    </li>
+    <li *ngIf="currentStories().length==0">
+      <a target="_blank" rel="noopener noreferrer">
+        Not Found :(
+      </a>
+    </li>
+  </ul>
+  
+  <div class="pagination-controls">
+    <button
+      type="button"
+      class="nav-btn"
+      (click)="goToPrevious()"
+      [disabled]="activePage() === 1"
+    >
+      ◀ Previous
+    </button>
+  
+    <span class="page-indicator">
+      Page {{ activePage() }} of {{ maxPages() }}
+    </span>
+  
+    <button
+      type="button"
+      class="nav-btn"
+      (click)="goToNext()"
+      [disabled]="activePage() === maxPages()"
+    >
+      Next ▶
+    </button>
   </div>
-  
-  
- 
+</div>

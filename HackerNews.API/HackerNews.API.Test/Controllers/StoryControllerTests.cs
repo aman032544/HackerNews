@@ -1,11 +1,15 @@
-using HackerNews.API.Controllers;
-using HackerNews.API.Models;
-using HackerNews.API.Services;
+﻿using HackerNews.API.Controllers;
+using HackerNews.Models.Dto;
+using HackerNews.Services.Interfaces;
 using Microsoft.AspNetCore.Mvc;
 using Moq;
+using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
 
-
-namespace HackerNews.API.Test
+namespace HackerNews.API.Test.Controllers
 {
     public class StoryControllerTests
     {
@@ -31,9 +35,9 @@ namespace HackerNews.API.Test
                     storylist.Add(new Story { Title = "Story3" });
                     return storylist;
                 });
-                
-             _mockService.Setup(service => service.GetTopStoriesAsync())
-                .Returns(expectedStories);
+
+            _mockService.Setup(service => service.GetTopStoriesAsync())
+               .Returns(expectedStories);
 
             // Act
             var result = await _controller.GetStories();
@@ -45,19 +49,35 @@ namespace HackerNews.API.Test
         }
 
         [Fact]
-        public async Task GetStories_ReturnsInternalServerError_WhenExceptionOccurs()
+        public async Task GetStories_WhenHttpRequestException_Returns503()
         {
             // Arrange
             _mockService.Setup(service => service.GetTopStoriesAsync())
-                .ThrowsAsync(new Exception("Service failure"));
+                        .ThrowsAsync(new HttpRequestException("External API failed"));
 
             // Act
             var result = await _controller.GetStories();
 
             // Assert
-            var errorResult = Assert.IsType<ObjectResult>(result);
-            Assert.Equal(500, errorResult.StatusCode);
-            Assert.Equal("Unable to fetch stories right now.", errorResult.Value);
+            var statusCodeResult = Assert.IsType<ObjectResult>(result);
+            Assert.Equal(503, statusCodeResult.StatusCode);
+            Assert.Contains("External API error", statusCodeResult.Value.ToString());
+        }
+
+        [Fact]
+        public async Task GetStories_WhenGeneralException_Returns500()
+        {
+            // Arrange
+            _mockService.Setup(service => service.GetTopStoriesAsync())
+                        .ThrowsAsync(new Exception("Something went wrong"));
+
+            // Act
+            var result = await _controller.GetStories();
+
+            // Assert
+            var statusCodeResult = Assert.IsType<ObjectResult>(result);
+            Assert.Equal(500, statusCodeResult.StatusCode);
+            Assert.Contains("Internal server error", statusCodeResult.Value.ToString());
         }
     }
 }

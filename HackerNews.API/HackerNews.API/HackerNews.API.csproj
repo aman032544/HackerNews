@@ -8,11 +8,13 @@
   </PropertyGroup>
 
   <ItemGroup>
+    <PackageReference Include="Newtonsoft.Json" Version="13.0.3" />
     <PackageReference Include="Swashbuckle.AspNetCore" Version="8.1.1" />
   </ItemGroup>
 
   <ItemGroup>
-    <Folder Include="Helpers\" />
+    <ProjectReference Include="..\HackerNews.Repository\HackerNews.Repository.csproj" />
+    <ProjectReference Include="..\HackerNews.Services\HackerNews.Services.csproj" />
   </ItemGroup>
 
 </Project>

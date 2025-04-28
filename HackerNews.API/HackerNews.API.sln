@@ -5,7 +5,13 @@ VisualStudioVersion = 17.8.34511.84
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "HackerNews.API", "HackerNews.API\HackerNews.API.csproj", "{592B26A2-8A01-416D-8842-DE6DD9F43FF5}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "HackerNews.API.Test", "HackerNews.API.Test\HackerNews.API.Test.csproj", "{A290CB22-808D-402A-92CA-FC98F6DF7306}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "HackerNews.API.Test", "HackerNews.API.Test\HackerNews.API.Test.csproj", "{A290CB22-808D-402A-92CA-FC98F6DF7306}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "HackerNews.Repository", "HackerNews.Repository\HackerNews.Repository.csproj", "{C1D46A71-8C4F-4637-9EE9-2FDA55B97720}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "HackerNews.Models", "HackerNews.Models\HackerNews.Models.csproj", "{3CB7E7F6-5A77-4C2F-8567-87E9FF586514}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "HackerNews.Services", "HackerNews.Services\HackerNews.Services.csproj", "{A25CE6A3-A717-4551-B20B-47EDBA664907}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -21,6 +27,18 @@ Global
 		{A290CB22-808D-402A-92CA-FC98F6DF7306}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{A290CB22-808D-402A-92CA-FC98F6DF7306}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{A290CB22-808D-402A-92CA-FC98F6DF7306}.Release|Any CPU.Build.0 = Release|Any CPU
+		{C1D46A71-8C4F-4637-9EE9-2FDA55B97720}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{C1D46A71-8C4F-4637-9EE9-2FDA55B97720}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{C1D46A71-8C4F-4637-9EE9-2FDA55B97720}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{C1D46A71-8C4F-4637-9EE9-2FDA55B97720}.Release|Any CPU.Build.0 = Release|Any CPU
+		{3CB7E7F6-5A77-4C2F-8567-87E9FF586514}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{3CB7E7F6-5A77-4C2F-8567-87E9FF586514}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{3CB7E7F6-5A77-4C2F-8567-87E9FF586514}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{3CB7E7F6-5A77-4C2F-8567-87E9FF586514}.Release|Any CPU.Build.0 = Release|Any CPU
+		{A25CE6A3-A717-4551-B20B-47EDBA664907}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{A25CE6A3-A717-4551-B20B-47EDBA664907}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{A25CE6A3-A717-4551-B20B-47EDBA664907}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{A25CE6A3-A717-4551-B20B-47EDBA664907}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

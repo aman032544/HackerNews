@@ -1,6 +1,8 @@
-using HackerNews.API.ApiOptions;
-using HackerNews.API.Repository;
-using HackerNews.API.Services;
+using HackerNews.Models.Options;
+using HackerNews.Repository.Implementation;
+using HackerNews.Repository.Interfaces;
+using HackerNews.Services.Implementations;
+using HackerNews.Services.Interfaces;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Options;
 using System.Runtime;
