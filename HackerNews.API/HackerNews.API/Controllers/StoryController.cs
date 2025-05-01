@@ -4,7 +4,7 @@ using Microsoft.AspNetCore.Mvc;
 
 namespace HackerNews.API.Controllers
 {
-    [Route("api/[controller]")]
+    [Route("api/Stories")]
     [ApiController]
     public class StoryController : ControllerBase
     {
@@ -24,7 +24,7 @@ namespace HackerNews.API.Controllers
         /// or 500 Internal Server Error for any other exceptions.
         /// </returns>
 
-        [HttpGet("api/Stories")]
+        [HttpGet]
         public async Task<IActionResult> GetStories()
         {
             try
